@@ -1,3 +1,4 @@
+var counter=1;
 function validateForm(){
     const name =document.myForm.name.value;
     const email=document.myForm.email.value;
@@ -26,6 +27,22 @@ function validateNumber(phNumber){
     return /^[789][0-9]{9}$/.test(phNumber);
 }
 function addToTable(name,email,phNumber){
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+    localStorage.setItem("phNumber", phNumber);
+
     
-    alert(name + email+phNumber)
+
+    var table=document.getElementsByName("table");
+    var record=document.createElement("tr");
+    record.innerHTML=`
+    <tr>
+    <td>${counter}</td>
+    <td>${localStorage.getItem("name")}</td>
+    <td>${localStorage.getItem("email")}</td>
+    <td>${localStorage.getItem("phNumber")}</td>
+</tr>`;
+table.append(record);
+counter++;
+    alert("name: "+name +" email: "+ email+" phone Number: "+phNumber)
 }
