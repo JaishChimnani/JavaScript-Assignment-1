@@ -10,6 +10,6 @@ input{
 tr{
     border-bottom: 1px solid white;
 }
-td{
+td,th{
     border-right: 1px solid white;
 }
