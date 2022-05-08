@@ -1,4 +1,11 @@
 var counter=1;
+
+var form = document.getElementById("myForm");
+function handleForm(event) { event.preventDefault();
+    document.myForm.name.value="";
+document.myForm.email.value="";
+document.myForm.phNumber.value=""; } 
+form.addEventListener('submit', handleForm);
 function validateForm(){
     const name =document.myForm.name.value;
     const email=document.myForm.email.value;
@@ -31,12 +38,12 @@ function addToTable(name,email,phNumber){
     localStorage.setItem("email", email);
     localStorage.setItem("phNumber", phNumber);
 
+    // alert(localStorage.getItem("name"));
     
 
-    var table=document.getElementsByName("table");
+    var table=document.getElementById("table");
     var record=document.createElement("tr");
-    record.innerHTML=`
-    <tr>
+    record.innerHTML=`<tr>
     <td>${counter}</td>
     <td>${localStorage.getItem("name")}</td>
     <td>${localStorage.getItem("email")}</td>
@@ -44,5 +51,8 @@ function addToTable(name,email,phNumber){
 </tr>`;
 table.append(record);
 counter++;
-    alert("name: "+name +" email: "+ email+" phone Number: "+phNumber)
+    // alert("name: "+name +" email: "+ email+" phone Number: "+phNumber)
+}
+function load(){
+    console.log("loaded");
 }

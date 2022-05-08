@@ -7,3 +7,9 @@ input{
 .btn{
     margin: 10px !important;
 }
+tr{
+    border-bottom: 1px solid white;
+}
+td{
+    border-right: 1px solid white;
+}
