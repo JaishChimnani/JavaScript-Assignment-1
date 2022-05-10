@@ -14,10 +14,10 @@ function validateForm(){
     if(validateName(name)===false){
     alert("Name can only contain alphabets");
 }
-if(validateEmail(email)===false){
+else if(validateEmail(email)===false){
     alert("Please Enter valid email");
 }
-if(validateNumber(phNumber)===false){
+else if(validateNumber(phNumber)===false){
     alert("Please enter a valid phone Number");
 }
 else{
